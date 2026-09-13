@@ -1,0 +1,23 @@
+{
+  "name": "@job-platform/worker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "dotenv": "17.2.2",
+    "pg": "8.16.3",
+    "pg-boss": "12.31.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "prisma": "7.10.0",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2"
+  }
+}
