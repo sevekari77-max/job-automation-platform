@@ -29,6 +29,6 @@ COPY --from=base /app/apps/worker/package.json ./apps/worker/package.json
 COPY --from=base /app/packages/shared/dist ./packages/shared/dist
 COPY --from=base /app/packages/shared/package.json ./packages/shared/package.json
 
-EXPOSE 4001
+EXPOSE 10000
 
-CMD ["node", "apps/worker/dist/index.js"]
+CMD ["sh", "-c", "node -e \"require('http').createServer((req,res)=>{res.writeHead(200);res.end('worker ok')}).listen(process.env.PORT || 10000,'0.0.0.0')\" & exec node apps/worker/dist/index.js"]
